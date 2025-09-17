@@ -1,0 +1,545 @@
+
+/* Base Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  z-index: 2000;
+  background-color: white;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+header div img {
+  width: 180px;
+}
+
+/* Nav Layout */
+header nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon (hidden on desktop) */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  header nav {
+    width: 100%;
+    position: relative;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.5); /* Clearer white */
+    padding: 10px;
+    width: 30%; /* You can adjust this for how much width it takes */
+    
+
+    position: absolute;
+    
+    right: -19px;  /* ⬅ Place it on the right side */
+   top:12px;
+    z-index: 9999; /* ⬆ ensure it floats above everything */
+  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1); /* optional: enhance pop effect */
+
+    align-items: flex-end; /* Align inner items to the right */
+    text-align: right;
+  }
+
+  #menu-toggle:checked ~ nav ul {
+    display: flex;
+  }
+
+  header nav ul li {
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+    width: 100%;
+  }
+
+  header nav ul li a {
+    text-align: right;
+    display: block;
+    width: 100%;
+    color: black;
+  }
+}
+
+
+
+
+
+/* Carousel Banner Section */
+#carouselExampleDark {
+  margin-top: 100px; /* Ensures it's not hidden behind fixed header */
+}
+
+/* Each carousel item (slide) */
+.carousel-item {
+
+  height: 370px;
+  overflow: hidden;
+}
+
+/* Fix image layout: make it fully responsive and centered */
+.carousel-item img {
+ height: 80%;
+      object-fit: cover;
+      position: relative;
+      left: 850px;
+      top: 60px;
+}
+
+/* Overlay text content */
+.text {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  color: black;
+  text-align: left;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7); /* Optional for readability */
+  max-width: 80%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 300px;
+  }
+
+  .text {
+    bottom: 10%;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .text h2 {
+    font-size: 20px;
+  }
+
+  .text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    height: 250px;
+  }
+
+  .text {
+    bottom: 8%;
+    left: 5%;
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .text h2 {
+    font-size: 18px;
+  }
+
+  .text p {
+    font-size: 12px;
+  }
+}
+
+/* card position */
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.card {
+  
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.card-container-fluid {
+  margin: 50px 200px; /* 200px left and right space */
+}
+
+
+.card-body {
+  position: relative;
+  padding-bottom: 70px;
+  margin: 0 20px 30px;
+    /* enough space for plus icon */
+}
+
+.card-body a i.fa-plus {
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+   margin-left:20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card-body a i.fa-plus:hover {
+ background-color: #007bff; /* Bootstrap blue or choose your own */
+  color: white;
+}
+
+
+.card2 {
+	 display: flex;
+ 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .card2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+}
+
+
+.card-title,.card-text{
+    text-align: center;
+     /* align-content: end; */
+    height:50px;   
+}
+.card-title{
+   align-content: end;
+}
+.card .fa-solid {
+    position: relative;
+    top: 26px;
+    left: 132px;
+}
+
+
+.big {
+  position: relative;
+  margin: 40px 0 30px; /* Top 40px, bottom 30px spacing */
+  text-align: center;
+}
+
+
+
+
+.per {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color:navy;
+  color: white;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 55px;
+}
+
+.card-title2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card-text10,
+.card-text20,
+.card-text30 {
+  margin-top: 10px;
+}
+
+.star-rating {
+  margin-top: 5px;
+}
+
+
+
+/* Hide the checkbox */
+.heart-toggle {
+  display: none;
+}
+
+/* Base heart icon (white outline by default) */
+.heart-label i::before {
+  font-style: normal;
+  content: '\f08a'; /* outline heart */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  color: white; /* default is white */
+  transition: all 0.3s ease;
+  font-size: 20px;
+}
+
+/* On card hover, show red outline heart */
+.card:hover .heart-label i::before {
+  color: red;
+}
+
+/* When checkbox is checked, show filled heart */
+.heart-toggle:checked + .heart-label i::before {
+  content: '\f004'; /* filled heart */
+  font-weight: 900;
+  color: red;
+}
+
+
+/* new arrivals */
+.big2 {
+    margin-top: 50px;
+    text-align: center;
+}
+.col-12 {
+    position: relative;
+    left: -100px;
+}
+.col-121 {
+    position: relative;
+    left: 170px;
+}
+.col-61 {
+    position: relative;
+    left: 80px;
+}
+
+
+/* shop */
+
+
+
+
+.banner {
+  background-color:navy
+  background-size: cover;
+  background-position: center;
+  height: 270px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.banner-text h1 {
+  font-size: 40px;
+  color: black;
+  font-weight: bold;
+}
+
+
+/* === DROPDOWN & SEARCH === */
+.drop {
+  margin: 20px 70px;
+}
+.search {
+  padding-bottom: -150px; /* move up */
+}
+
+/* === PRODUCT GRID === */
+.cards2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 60px;
+  justify-content: center;
+}
+
+/* === INDIVIDUAL CARDS === */
+
+
+
+
+.cards:hover {
+  transform: translateY(-5px);
+}
+
+.cards img {
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.cards-body {
+  padding: 10px 15px;
+}
+
+.cards-body a i.fa-plus {
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  margin-left:40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cards-body a i.fa-plus:hover {
+ background-color: #007bff; /* Bootstrap blue or choose your own */
+  color: white;
+}
+
+.cards-title2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-align: center;
+  white-space: normal;
+  word-break: break-word;
+}
+
+
+.cards-text10,
+.cards-text20,
+.cards-text30 {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.star-rating {
+  color: gold;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* === PLUS ICON === */
+.cards a .fa-plus {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.cards a .fa-plus:hover {
+  background-color: #0a58ca;
+  color: white;
+}
+
+
+
+/*cart*/
+/* Base Cart Styles */
+.cart {
+  position: relative;
+  top: 150px;
+  padding-left: 150px;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .cart {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .cart .card {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .cart img {
+    max-width: 100px;
+    height: auto;
+  }
+
+  .cart .fa-plus,
+  .cart .fa-minus,
+  .cart .fa-xmark {
+    position: static !important;
+    margin: 10px;
+  }
+
+  .cart .card-body {
+    padding: 10px;
+    position: static !important;
+  }
+
+  .cart .col-md-4,
+  .cart .col-md-8 {
+    width: 100% !important;
+    display: block;
+  }
+
+  .cart .card-text,
+  .cart .card-title {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .cart .text-body-secondary {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .cart .text-bg-light {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
